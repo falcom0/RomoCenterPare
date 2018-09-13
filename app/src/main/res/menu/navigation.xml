@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_peta"
+        android:icon="@drawable/ic_map_black_24dp"
+        android:title="@string/title_peta" />
+
+    <item
+        android:id="@+id/navigation_kegiatan"
+        android:icon="@drawable/ic_assignment_black_24dp"
+        android:title="@string/title_kegiatan" />
+
+    <item
+        android:id="@+id/navigation_kopi_darat"
+        android:icon="@drawable/ic_local_cafe_black_24dp"
+        android:title="@string/title_kopi_darat" />
+
+    <item
+        android:id="@+id/navigation_masjid"
+        android:icon="@drawable/ic_mosque_moon_and_star"
+        android:title="@string/title_masjid" />
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/title_notifications" />
+
+</menu>

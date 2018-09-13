@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "785792214139",
+    "firebase_url": "https://romocenter-1536328308841.firebaseio.com",
+    "project_id": "romocenter-1536328308841",
+    "storage_bucket": "romocenter-1536328308841.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785792214139:android:a571d2b7685267e0",
+        "android_client_info": {
+          "package_name": "house.digital.pare.romocenter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "785792214139-m5bp86kbt86i3k33iaqgui2tdc4n0mvs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "house.digital.pare.romocenter",
+            "certificate_hash": "4114cd9b0a6d0b5e1474890b7f956947f8c9afe9"
+          }
+        },
+        {
+          "client_id": "785792214139-u6djpf108vpa5e743t5th5mvpqqqcb0s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrNVatU2cJ8CAIBqZA9DVym7rFu4qhdS4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "785792214139-u6djpf108vpa5e743t5th5mvpqqqcb0s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
