@@ -353,7 +353,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                                 // Creating user login session
                                 // For testing i am stroing name, email as follow
                                 // Use user real data
-                                session.createLoginSession(response.body().getNama(), response.body().getKta());
+                                session.createLoginSession(response.body().getNama(), response.body().getKta(), response.body().getNik(), response.body().getIdUser());
 
                                 // Staring MainActivity
                                 Intent i = new Intent(getApplicationContext(), HomeActivity.class);

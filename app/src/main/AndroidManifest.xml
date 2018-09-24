@@ -37,9 +37,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".HomeActivity"
-            android:label="@string/title_activity_home">
-
-        </activity>
+            android:label="@string/title_activity_home" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -64,6 +62,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".KegiatanActivity" />
+        <activity
+            android:name=".PoskoActivity"
+            android:label="@string/title_activity_posko"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

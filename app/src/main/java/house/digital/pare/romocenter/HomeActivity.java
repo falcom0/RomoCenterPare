@@ -17,7 +17,9 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class HomeActivity extends AppCompatActivity{
+import model.Jadwal;
+
+public class HomeActivity extends AppCompatActivity implements KegiatanFragment.OnListFragmentInteractionListener{
 
     private TextView mTextMessage;
     private NoSwipePager viewPager;
@@ -73,7 +75,7 @@ public class HomeActivity extends AppCompatActivity{
 
         //peta
         pagerAdapter.addFragments(new PetaFragment());
-        pagerAdapter.addFragments(createFragment(R.color.colorPrimary));
+        pagerAdapter.addFragments(new KegiatanFragment());
         pagerAdapter.addFragments(createFragment(R.color.colorPrimaryDark));
         pagerAdapter.addFragments(createFragment(R.color.colorPrimaryDark));
         pagerAdapter.addFragments(createFragment(R.color.colorPrimaryDark));
@@ -97,5 +99,10 @@ public class HomeActivity extends AppCompatActivity{
 
     private int fetchColor(@ColorRes int color) {
         return ContextCompat.getColor(this, color);
+    }
+
+    @Override
+    public void onListFragmentInteraction(Jadwal item) {
+
     }
 }

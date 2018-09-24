@@ -16,6 +16,28 @@ public class ResponseApi {
     @SerializedName("kta")
     @Expose
     private String kta;
+    @SerializedName("nik")
+    @Expose
+    private String nik;
+    @SerializedName("id_user")
+    @Expose
+    private String idUser;
+
+    public String getNik() {
+        return nik;
+    }
+
+    public String getIdUser() {
+        return idUser;
+    }
+
+    public void setNik(String nik) {
+        this.nik = nik;
+    }
+
+    public void setIdUser(String idUser) {
+        this.idUser = idUser;
+    }
 
     public String getNama() {
         return nama;
