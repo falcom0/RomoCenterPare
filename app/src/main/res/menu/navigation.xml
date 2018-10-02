@@ -22,8 +22,10 @@
         android:title="@string/title_masjid" />
 
     <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_notifications" />
+        android:id="@+id/navigation_survei"
+        android:icon="@drawable/ic_survey_black_24dp"
+        android:title="@string/title_survei" />
+
+
 
 </menu>

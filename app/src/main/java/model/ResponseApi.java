@@ -22,6 +22,17 @@ public class ResponseApi {
     @SerializedName("id_user")
     @Expose
     private String idUser;
+    @SerializedName("role")
+    @Expose
+    private Integer role;
+
+    public Integer getRole() {
+        return role;
+    }
+
+    public void setRole(Integer role) {
+        this.role = role;
+    }
 
     public String getNik() {
         return nik;

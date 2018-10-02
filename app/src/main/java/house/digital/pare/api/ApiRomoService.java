@@ -37,12 +37,15 @@ public interface ApiRomoService {
     @POST("posko")
     @FormUrlEncoded
     Call<ResponseApi> submitPosko(@Field("koordinat") String koordinat,@Field("namaPosko") String namaPosko,@Field("kecamatan") String kecamatan);
+
     @POST("posko_jadwal")
     @FormUrlEncoded
     Call<ResponseApi> submitPoskoJadwal(@Field("idPosko") Integer idPosko,@Field("judul") String judul,@Field("deskripsi") String deskripsi
             ,@Field("waktuMulai") String waktuMulai,@Field("waktuSelesai") String waktuSelesai);
+
     @GET("posko")
     Call<List<Posko>> listPosko();
+
     @GET("posko_jadwal")
     Call<List<PoskoJadwal>> listPoskoJadwal();
 //

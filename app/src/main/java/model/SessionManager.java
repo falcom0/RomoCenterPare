@@ -38,6 +38,8 @@ public class SessionManager {
 
     public static final String KEY_ID_USER = "id_user";
 
+    public static final String KEY_ROLE = "role";
+
     // Constructor
     public SessionManager(Context context){
         this._context = context;
@@ -48,7 +50,7 @@ public class SessionManager {
     /**
      * Create login session
      * */
-    public void createLoginSession(String name, String kta, String nik, String idUser){
+    public void createLoginSession(String name, String kta, String nik, String idUser, Integer role){
         // Storing login value as TRUE
         editor.putBoolean(IS_LOGIN, true);
 
@@ -61,6 +63,8 @@ public class SessionManager {
         editor.putString(KEY_NIK, nik);
 
         editor.putString(KEY_ID_USER, idUser);
+
+        editor.putInt(KEY_ROLE, role);
 
         // commit changes
         editor.commit();
@@ -104,6 +108,8 @@ public class SessionManager {
         user.put(KEY_NIK, pref.getString(KEY_NIK, "0"));
 
         user.put(KEY_ID_USER, pref.getString(KEY_ID_USER, "0"));
+
+        user.put(KEY_ROLE, Integer.toString(pref.getInt(KEY_ROLE, 0)));
 
         // return user
         return user;

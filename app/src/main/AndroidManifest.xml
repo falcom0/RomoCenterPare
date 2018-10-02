@@ -46,9 +46,8 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/. 
         -->
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+
+
 
         <activity
             android:name=".MapsActivity"
@@ -66,7 +65,14 @@
         <activity
             android:name=".PoskoActivity"
             android:label="@string/title_activity_posko"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".PoskoJadwalActivity" />
+        <activity
+            android:name=".PoskoMapsActivity"
+            android:label="@string/title_activity_posko_maps"></activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBFWg9V_npKG2w2aMjgc1auXgOrvKHz-Fk" />
     </application>
 
 </manifest>
