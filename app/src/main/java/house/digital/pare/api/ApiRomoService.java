@@ -2,6 +2,7 @@ package house.digital.pare.api;
 
 import java.util.List;
 
+import model.Aspirasi;
 import model.Jadwal;
 import model.Posko;
 import model.PoskoJadwal;
@@ -48,6 +49,10 @@ public interface ApiRomoService {
 
     @GET("posko_jadwal")
     Call<List<PoskoJadwal>> listPoskoJadwal();
+
+    @POST("aspirasi")
+    @FormUrlEncoded
+    Call<List<Aspirasi>> getAspirasi(@Field("id_user") String id_user);
 //
 //    @GET("GetFood")
 //    Call<List<Food>> listFood(@Query("typeId") Integer typeId);

@@ -18,10 +18,11 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import house.digital.pare.romocenter.dummy.DummyContent;
+import model.Aspirasi;
 import model.Jadwal;
 import model.PoskoJadwal;
 
-public class HomeActivity extends AppCompatActivity implements KegiatanFragment.OnListFragmentInteractionListener,PoskoJadwalFragment.OnListFragmentInteractionListener{
+public class HomeActivity extends AppCompatActivity implements KegiatanFragment.OnListFragmentInteractionListener,PoskoJadwalFragment.OnListFragmentInteractionListener, AspirasiFragment.OnListFragmentInteractionListener{
 
     private TextView mTextMessage;
     private NoSwipePager viewPager;
@@ -76,9 +77,12 @@ public class HomeActivity extends AppCompatActivity implements KegiatanFragment.
         pagerAdapter = new BottomBarAdapter(getSupportFragmentManager());
 
         //hanya untuk 5 fragments
-        pagerAdapter.addFragments(new PetaFragment());
         pagerAdapter.addFragments(new KegiatanFragment());
+        pagerAdapter.addFragments(new AspirasiFragment());
+//        pagerAdapter.addFragments(new PetaFragment());
+
         pagerAdapter.addFragments(new PoskoJadwalFragment());
+
         pagerAdapter.addFragments(createFragment(R.color.colorPrimaryDark));
         pagerAdapter.addFragments(createFragment(R.color.colorPrimaryDark));
 
@@ -110,6 +114,11 @@ public class HomeActivity extends AppCompatActivity implements KegiatanFragment.
 
     @Override
     public void onListFragmentInteraction(PoskoJadwal item) {
+
+    }
+
+    @Override
+    public void onListFragmentInteraction(Aspirasi item) {
 
     }
 }
