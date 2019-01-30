@@ -2,14 +2,22 @@ package house.digital.pare.api;
 
 import java.util.List;
 
+import model.Aspirasi;
 import model.Jadwal;
+import model.ListUserAnswer;
 import model.Posko;
 import model.PoskoJadwal;
 import model.ResponseApi;
+import model.Survei;
+import model.SurveiAnswer;
+import model.SurveiQuestion;
+import model.UserAnswer;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -48,33 +56,24 @@ public interface ApiRomoService {
 
     @GET("posko_jadwal")
     Call<List<PoskoJadwal>> listPoskoJadwal();
-//
-//    @GET("GetFood")
-//    Call<List<Food>> listFood(@Query("typeId") Integer typeId);
-//
-//    @GET("GetFoodType")
-//    Call<List<FoodType>> listFoodType();
-//
-//    @GET("GetPromotion")
-//    Call<List<Promo>> listPromo(@Query("id") Integer id);
-//
-//    @GET("GetClient")
-//    Call<Room> room(@Query("mac") String mac);
-//
-//    @GET("GetSettings")
-//    Call<Setting> setting();
-//
-//    @GET("GetLiveTV")
-//    Call<List<TvChannel>> tvChannel(@Query("mac") String mac, @Query("packageId") Integer packageId);
 
-//    @GET("GetSubtitles")
-//    Call<List<RunningText>> runningText(@Query("mac") String mac);
-//
-//    @GET("GetScenery")
-//    Call<List<Scenery>> listScenery(@Query("id") Integer id);
-//
-//    @GET("GetApkPassword")
-//    Call<List<Pass>> listPass();
+    @GET("survei")
+    Call<List<Survei>> listSurvei();
+
+    @GET("survei_question")
+    Call<List<SurveiQuestion>> listSurveiQuestion();
+
+    @GET("survei_question/{idsurvei}")
+    Call<List<SurveiQuestion>> listSurveiQuestion(@Path("idsurvei") String idsurvei);
+
+    @GET("survei_answer")
+    Call<List<SurveiAnswer>> listSurveiAnswer(@Query("idquestion") Integer idSurveiQuestion);
+
+    @POST("user_answer")
+    Call<ResponseApi> addUserAnswer(@Body ListUserAnswer userAnswerList);
+
+    @GET("aspirasi/{id}")
+    Call<List<Aspirasi>> getAspirasi(@Path("id") String nik);
 
     @GET("GetCurrentTimeMillis")
     Call<Long> getCurrentTimeMillis();

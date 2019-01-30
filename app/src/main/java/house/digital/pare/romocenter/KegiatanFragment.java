@@ -1,16 +1,11 @@
 package house.digital.pare.romocenter;
 
-//import android.app.ListFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,12 +24,7 @@ import retrofit2.Response;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * A fragment representing a list of Items.
- * <p/>
- * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
- * interface.
- */
+
 public class KegiatanFragment extends ListFragment {
 
     // TODO: Customize parameter argument names
@@ -44,15 +34,9 @@ public class KegiatanFragment extends ListFragment {
     private OnListFragmentInteractionListener mListener;
     private SessionManager session;
 
-    /**
-     * Mandatory empty constructor for the fragment manager to instantiate the
-     * fragment (e.g. upon screen orientation changes).
-     */
     public KegiatanFragment() {
     }
 
-    // TODO: Customize parameter initialization
-    @SuppressWarnings("unused")
     public static KegiatanFragment newInstance(int columnCount) {
         KegiatanFragment fragment = new KegiatanFragment();
         Bundle args = new Bundle();
@@ -79,12 +63,15 @@ public class KegiatanFragment extends ListFragment {
         AdapterApi.service().getJadwal(session.getUserDetails().get("nik")).enqueue(new Callback<List<Jadwal>>() {
             @Override
             public void onResponse(Call<List<Jadwal>> call, Response<List<Jadwal>> response) {
-                List<Jadwal> result = response.body();
-
-                StableArrayAdapter adapter = new StableArrayAdapter(getActivity(),
-                        android.R.layout.simple_list_item_1, android.R.id.text1,
-                        result);
-                setListAdapter(adapter);
+                if(response.code() != 500) {
+                    List<Jadwal> result = response.body();
+                    if (result.size() > 0) {
+                        StableArrayAdapter adapter = new StableArrayAdapter(getActivity(),
+                                android.R.layout.simple_list_item_1, android.R.id.text1,
+                                result);
+                        setListAdapter(adapter);
+                    }
+                }
             }
 
             @Override
@@ -115,25 +102,13 @@ public class KegiatanFragment extends ListFragment {
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
-//        super.onListItemClick(l, v, position, id);
         Jadwal j = (Jadwal) l.getAdapter().getItem(position);
         Intent i = new Intent(getActivity().getApplicationContext(), KegiatanActivity.class);
         i.putExtra("jadwal", j);
         startActivity(i);
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
     public interface OnListFragmentInteractionListener {
-        // TODO: Update argument type and name
         void onListFragmentInteraction(Jadwal item);
     }
 
@@ -159,13 +134,6 @@ public class KegiatanFragment extends ListFragment {
                 convertView = LayoutInflater.from(getContext()).inflate(android.R.layout.simple_list_item_1, parent, false);
             TextView textView = (TextView) convertView.findViewById(android.R.id.text1);
             textView.setText(food.getJudul());
-//            textView.setTextColor(getResources().getColor(android.R.color.white));
-            /*NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("id","ID"));
-            hargaItem.setText(nf.format((double)food.getPrice()));
-            namaItem.setText(food.getName());
-            ketItem.setText(food.getContent());
-            Bitmap b = Function.getBitmapFromURL(url+food.getImagePath().substring(2));
-            imageItem.setImageBitmap(b);*/
 
             return convertView;
         }

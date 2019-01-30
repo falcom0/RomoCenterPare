@@ -3,9 +3,6 @@ package house.digital.pare.romocenter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
-//import android.app.Fragment;
-//import android.app.FragmentManager;
-
 import java.util.ArrayList;
 import java.util.List;
 

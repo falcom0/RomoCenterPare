@@ -19,10 +19,6 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-    <!-- To auto-complete the email text field in the login form with the user's emails -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -31,10 +27,6 @@
         android:roundIcon="@mipmap/romo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home" />
@@ -47,11 +39,6 @@
              You can define the keys for the debug and release targets in src/debug/ and src/release/. 
         -->
 
-
-
-        <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" />
         <activity
             android:name=".LoginActivity"
             android:label="Romo Center">
@@ -62,17 +49,22 @@
             </intent-filter>
         </activity>
         <activity android:name=".KegiatanActivity" />
+        <activity android:name=".AspirasiActivity" />
         <activity
             android:name=".PoskoActivity"
             android:label="@string/title_activity_posko"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".PoskoJadwalActivity" />
-        <activity
-            android:name=".PoskoMapsActivity"
-            android:label="@string/title_activity_posko_maps"></activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBFWg9V_npKG2w2aMjgc1auXgOrvKHz-Fk" />
+
+        <activity android:name=".SurveiActivity" />
+        <activity
+            android:name=".NavigationDrawerActivity"
+            android:label="@string/title_activity_navigation_drawer"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

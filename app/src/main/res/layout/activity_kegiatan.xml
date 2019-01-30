@@ -187,12 +187,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="monospace"
         android:shadowColor="@android:color/holo_red_light"
         android:text="Waktu Selesai"
         android:textColor="@android:color/holo_red_dark"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewWaktuMulai"
-        android:fontFamily="monospace" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewWaktuMulai" />
 
     <TextView
         android:id="@+id/textViewWaktuSelesai"
@@ -205,4 +205,15 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vPagerKegiatan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWaktuSelesai" />
 </android.support.constraint.ConstraintLayout>

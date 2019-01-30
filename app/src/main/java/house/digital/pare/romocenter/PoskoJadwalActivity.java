@@ -16,7 +16,6 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Formatter;
 import java.util.List;
@@ -44,8 +43,6 @@ public class PoskoJadwalActivity extends AppCompatActivity implements View.OnFoc
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_posko_jadwal);
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
 
         pjtmTanggal = (TextInputEditText) findViewById(R.id.pjtmTanggal);
         pjtmWaktu = (TextInputEditText) findViewById(R.id.pjtmWaktu);
@@ -81,16 +78,6 @@ public class PoskoJadwalActivity extends AppCompatActivity implements View.OnFoc
 
             }
         });
-
-
-//        List<String> list = new ArrayList<String>();
-//        list.add("list 1");
-//        list.add("list 2");
-//        list.add("list 3");
-//        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
-//                android.R.layout.simple_spinner_item, list);
-//        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spinner2.setAdapter(dataAdapter);
     }
 
     @Override
@@ -192,18 +179,13 @@ public class PoskoJadwalActivity extends AppCompatActivity implements View.OnFoc
 
     private void supplySpinnerLocation(List<Posko> listPosko){
         ArrayAdapter<Posko> adapter = new ArrayAdapter<Posko>(this,R.layout.spinner_item, listPosko);
-//                ArrayAdapter.createFromResource(this,
-//                R.array.planets_array, android.R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
         spnLokasi.setAdapter(adapter);
         spnLokasi.setOnItemSelectedListener(this);
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//        if(view.equals(spnLokasi)) {
         Posko posko = (Posko) parent.getItemAtPosition(position);
         idPosko = posko.getIdPosko();
 //        }
